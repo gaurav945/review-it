@@ -51,7 +51,7 @@ $(document).ready(function () {
 		}
 		var result = temp/total.length
 		// debugger;
-		document.getElementById('total-rating').innerHTML = result + '( ' + total.length + ' votes)'
+		document.getElementById('total-rating').innerHTML = result + '(' + total.length + ' votes)'
 	}
 
 	totalRating(total);
