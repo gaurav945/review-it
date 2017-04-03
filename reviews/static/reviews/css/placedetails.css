@@ -10,6 +10,7 @@
 	height: 60px;
 	text-align: center;
 	background-color: 	rgba(98, 98, 96, 0.8);
+	border-bottom: 1px solid;
 }
 
 .header > #searchTextField {
@@ -41,6 +42,8 @@
 .details {
 	height: 160px;
 	margin-left: 4px;
+	background-color: rgba(98, 98, 96, 0.2);
+	margin: 0;
 }
 
 .line-separator{
