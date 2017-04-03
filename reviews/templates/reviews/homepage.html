@@ -1,0 +1,27 @@
+<html>
+	<head>
+		{% load static %}
+			<link rel="stylesheet" href="{% static 'reviews/css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'reviews/css/homepage.css' %}">
+			<script type="text/javascript" src="{% static 'reviews/js/jquery.js' %}"></script>
+			<script type="text/javascript" src="{% static 'reviews/js/homepage.js' %}"></script>
+
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKq-YLQP_7sRgaEwLiQGcj3V4M7ol3yc&libraries=places"></script>
+
+		<title>Review It !!</title>
+	</head>
+	<body>
+		{% csrf_token %}
+		<div class="fix" style="position: relative;">
+			<img style="position: absolute;" width="200" src="https://qph.ec.quoracdn.net/main-qimg-8e0a19be85180404c063a9803bd57052">
+		</div>
+		<div class="header">
+			<input type="text" id="searchTextField" style="">
+			<button type="button" id="two">Add Review</button>
+			<button type="button" id="one">Browse Reviews</button>
+		</div>
+		<div class="body">
+			<button type="button" id="three">Browse</button>
+		</div>
+	</body>
+</html>

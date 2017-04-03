@@ -1,0 +1,194 @@
+.parent-body {
+	background-color: rgba(235, 236, 237, 0.7);
+}
+
+.logo {
+	cursor: hand;
+}
+
+.header {
+	height: 60px;
+	text-align: center;
+	background-color: 	rgba(98, 98, 96, 0.8);
+}
+
+.header > #searchTextField {
+	height: 36px;
+    width: 240px;
+    margin-top: 11px;
+    font-size: 20px;
+    padding-left: 4px;
+}
+
+.header > #two {
+	height: 36px;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+.header > #one {
+	height: 36px;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+.details {
+	height: 160px;
+	margin-left: 4px;
+}
+
+.line-separator{
+	height:1px;
+	background:#717171;
+	border-bottom:1px solid #313030;
+}
+
+.details > .icon {
+	width: 53px;
+	display: inline;
+	position: relative;
+	top: 5px;
+	/*margin-top: -7px;*/
+}
+
+.details > .title {
+	display: inline;
+	position: absolute;
+	top: 55px;
+}
+
+.details > .address {
+	margin-left: 9px;
+	font-size: 24px;
+}
+
+.details > #add-review {
+	position: absolute;
+    right: 10px;
+    width: 200px;
+    height: 46px;
+    top: 164px;
+    border-radius: 0px;
+    border: 1px solid;
+    font-size: 20px;
+    background-color: rgba(196, 214, 249, 0.9);
+}
+
+.reviews {
+  border-right: 1px solid;
+  padding-top: 48px;
+}
+
+.reviews > .each-review {
+	float: none;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid;
+    margin-bottom: 45px;
+    position: relative;
+    background-color: rgba(182, 189, 193, 0.6);
+}
+
+.reviews > .each-review > .profile-pic {
+	width: 50px;
+	height: 50px;
+	border: 1px solid;
+	border-radius: 100px;
+	position: absolute;
+	margin-top: 8px;
+	top: 6px;
+}
+
+.reviews > .each-review > .author {
+	position: absolute;
+	top: 12px;
+	left: 77px;
+	font-size: 21px;
+}
+
+.reviews > .each-review > .rating {
+	position: absolute;
+	left: 77px;
+	top: 40px;
+	font-size: 18px;
+}
+
+.reviews > .each-review > .time {
+	position: absolute;
+	top: 40px;
+	right: 14px;
+	font-size: 18px;
+}
+
+.reviews > .each-review > .main-review {
+	border: 1px solid;
+	margin-top: 21px;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 17px;
+    background-color: rgba(228, 227, 227, 1);
+}
+
+#dialog > #submit-review {
+	margin-top: 20px;
+	width: 160px;
+	float: right;
+	height: 36px;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+#dialog > #cancel-review {
+	margin-right: 16px;
+	width: 80px;
+	margin-top: 20px;
+	float: right;
+	height: 36px;
+	border-radius: 0px;
+	border: none;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+.sidebar > .sidebar-child {
+	text-align: center; 
+	color: black; 
+	margin-top: 22px; 
+	font-size: 29px; 
+	margin-bottom: 20px;
+}
+
+.sidebar > .recent-reviews {
+	margin-bottom: 40px; 
+	font-size: 21px; 
+	width: 291px; 
+	background-color: rgba(182, 189, 193, 0.6); 
+	padding-left: 0px; 
+	padding-right: 0px;
+}
+
+.sidebar > .recent-reviews > a {
+	border: 1px solid; 
+	padding: 4px; 
+	color: black; 
+	display: inline-block; 
+	width: 100%;
+}
+
+.sidebar > .recent-reviews > a:hover {
+	text-decoration: none;
+}
+
+.sidebar > .recent-reviews > a > img {
+	margin-right: 5px;
+}

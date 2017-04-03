@@ -1,0 +1,91 @@
+<html>
+	<head>
+		{% load static %}
+			<link rel="stylesheet" href="{% static 'reviews/css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'reviews/css/placedetails.css' %}">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+
+			<script type="text/javascript" src="{% static 'reviews/js/jquery.js' %}"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+			<script type="text/javascript" src="{% static 'reviews/js/placedetails.js' %}"></script>
+
+			<script type="text/javascript" src="{% static 'reviews/js/homepage.js' %}"></script>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKq-YLQP_7sRgaEwLiQGcj3V4M7ol3yc&libraries=places"></script>
+
+		<title>{{data.name}}</title>
+	</head>
+	<body class="parent-body">
+		<div class="fixed-logo" style="position: relative;">
+			<img class="logo" src="https://qph.ec.quoracdn.net/main-qimg-8e0a19be85180404c063a9803bd57052" style="position: absolute;" width="150">
+		</div>
+		<div class="header">
+			<input type="text" id="searchTextField" style="">
+			<button type="button" id="two">Add Review</button>
+			<button type="button" id="one">Browse Reviews</button>
+		</div>
+
+		<div class="details">
+			<img class="icon" src="{{data.icon_url}}">
+			<h1 class="title">{{data.name}}</h1>
+			<h4 class="address">{{data.address}}</h4>
+			<button id="add-review" type="button">Review this place</button>
+		</div>
+
+		<div class="line-separator"></div>
+		<div id="dialog" style="display: none;">
+			{% csrf_token %}
+			<div style="width: 100%; display: inline-block;">
+				<label for="user-name" style="font-size: 22px; float: left;">Name</label>
+				<input type="text" id="user-name" style="width: 300px; float: right; height: 30px;">
+			</div>
+
+			<div style="width: 100%; display: inline-block; margin-top: 10px;">
+				<label for="user-rating" style="font-size: 22px; float: left;">Rating</label>
+				<input type="number" id="user-rating" min="0" max="5" style="float: right; height: 30px;">
+			</div>
+
+			<label for="entered-review" style="margin-top: 34px; width: 100%; font-size: 24px;">Enter your review here...</label>
+			<textarea id="entered-review" style="width: 100%; height: 150px; font-size: 20px;"></textarea>
+
+			<button id="submit-review" type="button">Submit Review</button>
+			<button id="cancel-review" type="button">Cancel</button>
+		</div>
+
+		<div class="reviews col-lg-9">
+			{% for review in reviews %}
+				<div class="each-review col-lg-11">
+					{% if review.author != 'None' %}
+						<img src="{{review.profile_pic}}" class="profile-pic">
+							
+						<span class="author">{{review.author}}</span></br>
+					{% endif %}
+					{% if review.rating != 'None' %}
+						<span class="rating">{{review.rating}}</span></br>
+					{% endif %}
+					{% if review.time != 'None' %}	
+						<span class="time">{{review.time}}</span></br>
+					{% endif %}
+					{% if review.review != 'None' %}	
+						<div class="main-review">{{review.review}}</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="sidebar col-lg-3">
+			<div class="sidebar-child">
+				<span>Trending Places...</span>
+			</div>
+
+			{% for recent_places in recent %}
+				<div class="recent-reviews col-lg-10">
+					<a href="/{{recent_places.name}}/?id={{recent_places.place_id}}">
+						<img width="20" src="{{recent_places.icon_url}}">
+						<span>{{recent_places.name|truncatechars:20}}</span>
+					</a></br>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
