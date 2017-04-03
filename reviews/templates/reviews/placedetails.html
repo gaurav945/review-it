@@ -29,6 +29,7 @@
 			<img class="icon" src="{{data.icon_url}}">
 			<h1 class="title">{{data.name}}</h1>
 			<h4 class="address">{{data.address}}</h4>
+			<h4 id="total-rating" style="font-size: 22px; margin-left: 9px;"></h4>
 			<button id="add-review" type="button">Review this place</button>
 		</div>
 
@@ -62,6 +63,7 @@
 					{% endif %}
 					{% if review.rating != 'None' %}
 						<span class="rating">{{review.rating}}</span></br>
+						<!-- <span class="rating"><img class="stars" src="https://qph.ec.quoracdn.net/main-qimg-4ef5048f6d17ba33a9f139f299d85463" style="width: 24px;"></span></br> -->
 					{% endif %}
 					{% if review.time != 'None' %}	
 						<span class="time">{{review.time}}</span></br>

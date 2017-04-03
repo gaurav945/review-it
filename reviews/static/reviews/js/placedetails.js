@@ -11,6 +11,51 @@ $(document).ready(function () {
 		window.location.href = '/'
 	})
 
+	for (var i=0; i<$('.main-review').length; i++) {
+		if ($('.main-review')[i].innerHTML == '') {
+			$('.main-review')[i].style.padding = '0px';
+			$('.main-review')[i].style.border = 'none';
+		}
+	}
+
+	for (var i=0; i<$('.each-review').length; i++) {
+		if ($('.each-review')[i].innerHTML.trim() == '') {
+			$('.each-review')[i].style.backgroundColor = 'inherit';
+			$('.each-review')[i].style.border = 'none';
+		}
+	}	
+
+	var total = [];
+
+	for (var i=0; i<$('.rating').length; i++) {
+		var stars = parseInt($('.rating')[i].innerHTML)
+		total.push(stars);
+		$('.rating')[i].innerHTML = '';
+		starmaker(stars, i);
+	}
+
+	function starmaker (stars, point) {
+		for (var i=0; i<stars; i++) {
+			var img_tag = document.createElement('img');
+			img_tag.src = "https://qph.ec.quoracdn.net/main-qimg-4ef5048f6d17ba33a9f139f299d85463";
+			img_tag.width = "24";
+			$(img_tag).css('background-color', 'rgba(98, 98, 96, 0.3)');
+			document.getElementsByClassName('rating')[point].appendChild(img_tag);
+		}
+	}
+
+	function totalRating (total) {
+		var temp = 0
+		for (var i=0; i<total.length; i++) {
+			temp = temp + total[i]
+		}
+		var result = temp/total.length
+		// debugger;
+		document.getElementById('total-rating').innerHTML = result + '( ' + total.length + ' votes)'
+	}
+
+	totalRating(total);
+
 	$('#add-review').on('click', function () {
 		// debugger;
 		$( "#dialog" ).dialog();
