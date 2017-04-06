@@ -61,8 +61,8 @@ def show_place (request, place_name):
 			# return JsonResponse({'name' : name, 'id' : id_})
 			reviews = Review.objects.filter(place=p)
 			total_places = len(Place.objects.all())
-			if total_places >= 10:
-				required = Place.objects.all()[total_places-10:total_places]
+			if total_places >= 5:
+				required = Place.objects.all()[total_places-5:total_places]
 			else:
 				required = Place.objects.all()[0:total_places]
 			return render_to_response('reviews/placedetails.html', {'data' : p, 'reviews' : reviews, 'recent' : required}, context_instance=RequestContext(request))
@@ -75,8 +75,8 @@ def show_place (request, place_name):
 			# return JsonResponse({'name' : name, 'id' : id_})
 			reviews = Review.objects.filter(place=p)
 			total_places = len(Place.objects.all())
-			if total_places >= 10:
-				required = Place.objects.all()[total_places-10:total_places]
+			if total_places >= 5:
+				required = Place.objects.all()[total_places-5:total_places]
 			else:
 				required = Place.objects.all()[0:total_places]
 			return render_to_response('reviews/placedetails.html', {'data' : p, 'reviews' : reviews, 'recent' : required}, context_instance=RequestContext(request))
