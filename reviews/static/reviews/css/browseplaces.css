@@ -1,0 +1,69 @@
+.logo {
+	cursor: hand;
+}
+
+.header {
+	height: 60px;
+	text-align: center;
+	background-color: 	rgba(98, 98, 96, 0.8);
+	border-bottom: 1px solid;
+}
+
+.header > #searchTextField {
+	height: 36px;
+    width: 240px;
+    margin-top: 11px;
+    font-size: 20px;
+    padding-left: 4px;
+}
+
+.header > #two {
+	height: 36px;
+	border-radius: 0px;
+	border: 1px solid;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+.header > #one {
+	height: 36px;
+	border-radius: 0px;
+	border: 1px solid;
+	box-shadow: none;
+	font-size: 20px;
+	background-color: rgba(196, 214, 249, 0.9);
+}
+
+.separate {
+	height: 48px;
+}
+
+.r-image {
+	width: 42px;
+}
+
+.one-final-place {
+	margin-bottom: 40px; 
+	font-size: 21px; 
+	width: 360px; 
+	background-color: rgba(182, 189, 193, 0.6); 
+	padding-left: 0px; 
+	padding-right: 0px;
+}
+
+.one-final-place > a {
+	border: 1px solid; 
+	padding: 4px; 
+	color: black; 
+	display: inline-block; 
+	width: 100%;
+}
+
+.one-final-place > a:hover {
+	text-decoration: none;
+}
+
+.one-final-place > a > img {
+	margin-right: 5px;
+}

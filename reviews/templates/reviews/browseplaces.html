@@ -1,0 +1,40 @@
+<html>
+	<head>
+		{% load static %}
+			<link rel="stylesheet" href="{% static 'reviews/css/bootstrap.css' %}">
+			<link rel="stylesheet" href="{% static 'reviews/css/browseplaces.css' %}">
+			<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"> -->
+
+
+			<script type="text/javascript" src="{% static 'reviews/js/jquery.js' %}"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+			<script type="text/javascript" src="{% static 'reviews/js/browseplaces.js' %}"></script>
+
+			<script type="text/javascript" src="{% static 'reviews/js/homepage.js' %}"></script>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoKq-YLQP_7sRgaEwLiQGcj3V4M7ol3yc&libraries=places"></script>
+
+		<title>Browse Reviews</title>
+	</head>
+
+	<body>
+		<div class="fixed-logo" style="position: relative;">
+			<img class="logo" src="https://qph.ec.quoracdn.net/main-qimg-8e0a19be85180404c063a9803bd57052" style="position: absolute;" width="150">
+		</div>
+		<div class="header">
+			{% csrf_token %}
+			<input type="text" id="searchTextField" style="">
+			<button type="button" id="two">Add Review</button>
+			<button type="button" id="one">Browse Reviews</button>
+		</div>
+		<div class="separate">
+			
+		</div>
+		<div class="all col-lg-12">
+			{% for place in places %}
+			<div class="one-place" style="display: none;">
+				{{place.name|truncatechars:30}}+{{place.icon_url}}+{{place.place_id}}
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>

@@ -103,6 +103,11 @@ $(document).ready(function () {
 		$('#one, #two').on('click', function () {
 			alert('Please type some establishment...');
 		});
+
+		$('#three').on('click', function () {
+			window.location.href = '/browse';
+		})
+
 	}
 
 

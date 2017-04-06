@@ -107,3 +107,8 @@ def add_review_to_place (request):
 
 	r.save()
 	return JsonResponse({'Success' : 'Review object has been created...'})
+
+def browse (request):
+	all_places = Place.objects.all()
+
+	return render_to_response('reviews/browseplaces.html', {'places' : all_places}, context_instance=RequestContext(request))

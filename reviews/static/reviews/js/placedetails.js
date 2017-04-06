@@ -46,6 +46,7 @@ $(document).ready(function () {
 
 	function totalRating (total) {
 		var temp = 0
+		// debugger;
 		for (var i=0; i<total.length; i++) {
 			temp = temp + total[i]
 		}
@@ -130,6 +131,14 @@ $(document).ready(function () {
 						'</div>'
 
 				$('.reviews').append(new_data);
+
+				var new_total = [];
+				// debugger;
+				for (var i=0; i<$('.rating').length; i++) {
+					var stars = document.getElementsByClassName('rating')[i].childNodes.length;
+					new_total.push(stars);
+				}
+				totalRating(new_total);
 			}
 		});
 	});
